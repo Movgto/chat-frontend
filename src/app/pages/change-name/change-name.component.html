@@ -1,0 +1,12 @@
+<h2>Change your name</h2>
+<p>Current name: <strong>{{ playerService.name() }}</strong></p>
+<a routerLink="/" class="back-link">Back</a>
+
+<form>
+    <div class="input-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" [value]="name()" (input)="updateName($event)" (keyup.enter)="changeName()" />
+    </div>
+
+    <button type="submit" (click)="changeName()">Change Name</button>
+</form>

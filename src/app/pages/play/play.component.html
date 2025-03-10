@@ -1,0 +1,24 @@
+<a routerLink="/">Back</a>
+
+@if(roomService.getRoomData()) {  
+  <div class="chatbox">
+    @for(message of roomService.getRoomData()!.messages; track $index) {
+      <div [class]="message.author === playerService.name() ? 'message-self' : 'message-other'">
+        <span class="author">{{message.author}}</span>
+        <span class="content">{{message.content}}</span>
+      </div>
+    }
+  </div>
+
+  <div class="inputbox">
+    <input 
+      type="text" 
+      [value]="message().content" 
+      (input)="updateMessage($event)"
+      (keyup.enter)="sendMessage()" 
+    />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+} @else {
+  <h1>Loading...</h1>
+}

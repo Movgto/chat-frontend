@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+.background {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(25, 30, 36);
+    padding-block: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    width: 90%;
+    height: 100%;
+    flex: 1;
+    max-width: 720px;    
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
