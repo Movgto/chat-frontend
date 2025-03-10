@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { io } from 'socket.io-client'
 import { CreateRoomArgs, CreateRoomResponse } from '../types/createRoom';
 import { JoinRoomArgs } from '../types/joinRoom';
-import { Room, Message, SendMessageArgs } from '../types/room';
+import { Room, SendMessageArgs } from '../types/room';
 import { Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServerService {
 
-  server = io('localhost:3000', { autoConnect: false })
+  server = io(environment.SERVER_URL, { autoConnect: false })
   roomSubject = new Subject<Room>()
 
   constructor() {
